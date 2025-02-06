@@ -11,10 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from dotenv import read_dotenv
-import os
-
-read_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = "django-insecure-)t4up&9t*0qs1h@4)ac^bv+(@-h!dwqz_=hlftuu9g7b2onwsq"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["django-comments-api.onrender.com"]
 
 
 # Application definition
@@ -84,11 +80,11 @@ WSGI_APPLICATION = 'server.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get("DATA_BS_NAME"),
-        'USER': os.environ.get("DATA_BS_USER"),
-        'PASSWORD': os.environ.get("DATA_BS_PASS"),
-        'HOST': os.environ.get("DATA_BS_HOST"),
-        'PORT': os.environ.get("DATA_BS_PORT"),
+        'NAME': "defaultdb",
+        'USER': "avnadmin",
+        'PASSWORD': "AVNS_FSazVRGZ7PPZqXAdDYC",
+        'HOST': "mysql-2533237f-dalerjonsodikov27-e77a.h.aivencloud.com",
+        'PORT': "11610s",
     }
 }
 
@@ -128,11 +124,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-# # STATIC_ROOT=BASE_DIR/'staticfiles'
-# # STATICFILES_DIRS=[BASE_DIR/"static"]
-# # Media files
-# MEDIA_ROOT=BASE_DIR/'media'
-# MEDIA_URL='/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -142,8 +133,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS=True
 
 CORS_ALLOW_CREDENTIALS = True
-
-CORS_ALLOW_HEADERS = [
-    "content-type",
-    "authorization",
-]
